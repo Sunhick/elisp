@@ -54,4 +54,8 @@
   (interactive)
   (+ a b))
 
+;; 1+ is a function in lisp
+(let ((x 99))
+  (setq x (1+ x)))
+
 (add-two 9 9)
