@@ -59,3 +59,11 @@
   (setq x (1+ x)))
 
 (add-two 9 9)
+
+(switch-to-buffer "*Messages*")
+
+(with-output-to-temp-buffer "*my temp*"
+  (print "hello Sunil")
+  (switch-to-buffer "*my temp*"))
+
+(kill-buffer "*my temp*")
