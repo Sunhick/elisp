@@ -31,7 +31,11 @@
 (message name)                          ; Will still print "Sunil"
 
 ;; deffun - defines a function.
+(defun hello (name)
+  "greeting function"
+  (message "Hello %s! Welcome to elisp" name))
 
+(hello "Rani")
 
 ;; lexically scoped vs dynamically scoped variables
 ;; setf and setq vs defvar
