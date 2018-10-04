@@ -1,6 +1,22 @@
 ;; learn about emacs lisp data structures here.
 ;; sequences : list and vectors
 
+;; vectors
+(defvar v [1 2 3 4 [5 6]])
+["Yes" "No" "Si" "pardon" ,v]
+(let ((x (make-vector 5 0))))
+
+;; lists
+'(1 2 3 5)
+(quote ("sunil" "ram" "john" "mike"))
+(list 1 2 3 (+ 4 4))
+(list 1 (+ 1 1) 3)
+
+;; pairs / associate lists or alist
+'( (apple . "apple")
+   (orange . "orange")
+   (nine . 9))
+
 ;; lambda functions
 (let ((fn (lambda ()
             (message "Hi from lambda function"))))
@@ -78,3 +94,7 @@
   (puthash 'aa 9 myHash)
   (gethash 'bb myHash)
   (gethash 'bb myHash 10))
+
+;; check out for like support from cl package
+;; (require 'cl)
+;; loop

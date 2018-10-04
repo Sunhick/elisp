@@ -30,12 +30,25 @@
 (defvar name "John")
 (message name)                          ; Will still print "Sunil"
 
+;; usually global variables
+(defvar *name* (read))
+(print *name*)
+
+
 ;; deffun - defines a function.
 (defun hello (name)
   "greeting function"
   (message "Hello %s! Welcome to elisp" name))
 
 (hello "Rani")
+
+;; defmacro - defines a macro i.e compile time code generation
+(setq val 0)
+(defvar xx 99 "some 99")
+(defmacro ++ (x)
+  `(setq ,x (1+ ,x)))
+(++ val)
+(++ xx)
 
 ;; lexically scoped vs dynamically scoped variables
 ;; setf and setq vs defvar
