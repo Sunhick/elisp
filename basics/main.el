@@ -67,3 +67,63 @@
   (switch-to-buffer "*my temp*"))
 
 (kill-buffer "*my temp*")
+
+;; ==============
+
+;; pair/ cons
+(setq pair '(a . b))
+(car pair)
+
+;; lists
+(setq my-list '(1 2 3 4 5 6))
+
+;; vector
+(setq my-vec [1 2 3 (+ 1 1)])
+
+(type-of my-list)
+
+(format t "~a" "sunil")
+
+
+(defun print-list (&optional &key x y z)
+  (message "%S" (list &key x y z)))
+
+(print-list 1 2 3)
+
+(defclass foo ()
+  ( ) "Doc String")
+
+(make-instance 'foo)
+
+;; (defgeneric)
+;; (deftype)
+;; (defmethod)
+;; (defstruct)
+;; (defvar)
+;; (defparameter)
+;; (defmacro)
+;; (defconst)
+;; (defun)
+;; (defsetf)
+
+(defun sum-all (&rest numbers)
+  (funcall #'+ numbers))
+
+(sum-all 1 2 3 4 5 6 7)
+
+(defun test-optional2 (a b &optional b c d e)
+  (list :a a :b b :c c :d d :e e))
+
+(test-optional2 0 1 2 3 4 5 )
+
+'(:key1 value1 :key2 value2 :key3 1002.23 :key4 (a b c d e))
+
+'((a . b) (x . y) (2 . 3) (4 . (1 2 3 4 5)))
+
+'((a  b) (x  y) (2  3) (4  (1 2 3 4 5)))
+
+(string-width "sunil")
+
+(make-string 5 ?x)
+
+(+ 1 2 3 4 5 6 7)
