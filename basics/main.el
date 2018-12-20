@@ -105,6 +105,7 @@
 ;; (defconst)
 ;; (defun)
 ;; (defsetf)
+;; (defalias)
 
 (defun sum-all (&rest numbers)
   (funcall #'+ numbers))
@@ -127,3 +128,45 @@
 (make-string 5 ?x)
 
 (+ 1 2 3 4 5 6 7)
+
+(defalias 'map 'mapcar)
+
+(map #'(lambda (x) (1+ x)) '(1 2 3 4))
+(mapcar #'(lambda (x) (1+ x)) '(1 2 3 4))
+
+(defun test-cl-case (operation x y)
+  (cl-case operation
+    (:mul (* x y))
+    (:add (+ x y))
+    (:sub (- x y))
+    (:div (/ x y))
+    (otherwise nil)))
+
+(test-cl-case :mul 2 10)
+
+(setq kk '(:mul 2 10))
+
+(type-of (car kk))
+
+
+(flet ((times-2 (function (lambda (x)
+                  (* 2 x)))))
+  (times-2 2))
+
+(let ((a 99))
+  (message "%d" a))
+
+
+(defstruct account id name balance)
+(make-account :id 3434 :name "John" :balance 1000.34)
+(account-name user1)
+
+
+(foo boo)
+
+`("the product of 3 and 4 is" ,(* 3 4))
+
+(defmacro λ (args body)
+  `(lambda ,args ,body))
+
+(λ (x) (1+ x) )
