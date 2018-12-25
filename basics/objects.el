@@ -34,6 +34,30 @@
 (person-p (make-person))
 
 ;; classes
+;; ref: http://nic.ferrier.me.uk/blog/2012_07/tips-and-tricks-for-emacslisp
+(defclass some-userc nil
+  ((id
+    :initarg :id
+    :initform (lambda () (some-user--make-uuid))
+    :documentation "The id of the person")
+   (name
+    :type string
+    :initarg :name
+    :initform ""
+    :documentation "Name of the person"))
+  "A user record.")
+
+(defun some-user--make-uuid () ; functions can be used by constructors
+  "1213243")
+
+(cl-defmethod some-user-greeting ((user some-userc) ; this is a type specifier
+                               &optional daytime)
+  "Methods are functions and have docstrings."
+  (if daytime
+    (message "good morning %s" (oref user name))))
+
+(let ((user (some-userc :name "nic ferrier"))) ; make a user
+  (some-user-greeting user t)) ; call the method
 
 ;; generic
 (defgeneric f (x y))
