@@ -20,4 +20,9 @@
   (area c)
   (area e))
 
+(random 10)
 
+
+;; defstruct / cl-defstruct one and the same
+(defstruct Person name id)
+(setq m (make-Person :name "Sunil" :id 34))

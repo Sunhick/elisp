@@ -6,7 +6,7 @@
   (())
   "A empty nonshape class")
 
-(cl-defmethod area ((n Shape))
+(cl-defmethod area ((n NonShape))
   "Non shape area implementation"
   (message "Non shape called"))
 

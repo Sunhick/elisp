@@ -9,7 +9,7 @@
     :initarg :radius))
   "Circle class")
 
-(cl-defmethod area ((s Shape))
+(cl-defmethod area ((s Circle))
   "Area of a circle"
   (message "Circle area: %s" (* 3.14 (expt (oref s radius) 2))))
 
