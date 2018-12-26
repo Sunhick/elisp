@@ -170,3 +170,15 @@
   `(lambda ,args ,body))
 
 (λ (x) (1+ x) )
+
+;; dir-locals
+;; directory local variables
+(setq mm '(nil . ((a . b)
+                  (c . d))))
+
+
+ ((pine . cones)
+      (oak . acorns)
+      (maple . seeds))
+
+(message "name: %s email:%s" my-name my-mail)
