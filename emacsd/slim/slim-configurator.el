@@ -4,6 +4,8 @@
 (require 'eieio)
 
 (require 'pkg-provider)
+
+;; FIXME: hide the existance of *-pkg-provider.
 (require 'slim-pkg-provider)
 (require 'theme-pkg-provider)
 (require 'vendor-pkg-provider)
