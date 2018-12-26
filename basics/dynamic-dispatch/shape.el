@@ -12,8 +12,9 @@
 (cl-defgeneric area ((s Shape))
   "Generic area function")
 
-(cl-defmethod area ((s Shape))
-  "Generic area function")
+;; (cl-defmethod area ((s Shape))
+;;   "Generic area function"
+;;   (message "Dummy implementation"))
 
 (provide 'shape)
 
